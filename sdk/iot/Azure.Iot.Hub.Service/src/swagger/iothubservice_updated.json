@@ -758,7 +758,7 @@
           "200": {
             "description": "Returns the device twin object",
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           }
         }
@@ -787,7 +787,7 @@
             "description": "Device twin info",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           },
           {
@@ -804,7 +804,7 @@
           "200": {
             "description": "Returns the device twin object",
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           }
         }
@@ -833,7 +833,7 @@
             "description": "Device twin info",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           },
           {
@@ -850,7 +850,7 @@
           "200": {
             "description": "Returns the device twin object",
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           }
         }
@@ -888,7 +888,7 @@
           "200": {
             "description": "Returns the device twin object",
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           }
         }
@@ -924,7 +924,7 @@
             "description": "Device twin info",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           },
           {
@@ -941,7 +941,7 @@
           "200": {
             "description": "Returns the device twin object",
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           }
         }
@@ -977,7 +977,7 @@
             "description": "Device twin information",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           },
           {
@@ -994,7 +994,7 @@
           "200": {
             "description": "Returns the device twin object",
             "schema": {
-              "$ref": "#/definitions/Twin"
+              "$ref": "#/definitions/DeviceTwin"
             }
           }
         }
@@ -2013,6 +2013,7 @@
       "type": "object",
       "properties": {
         "iotEdge": {
+          "description": "Gets and sets the IoT Edge capability.",
           "type": "boolean"
         }
       }
@@ -2032,9 +2033,11 @@
       "type": "object",
       "properties": {
         "primaryThumbprint": {
+          "description": "Gets and sets the X509 client certificate primary thumbprint",
           "type": "string"
         },
         "secondaryThumbprint": {
+          "description": "Gets and sets the X509 client certificate secondary thumbprint",
           "type": "string"
         }
       }
@@ -2425,7 +2428,7 @@
         }
       }
     },
-    "Twin": {
+    "DeviceTwin": {
       "description": "Twin Representation",
       "type": "object",
       "properties": {
@@ -2514,9 +2517,11 @@
           "$ref": "#/definitions/DeviceCapabilities"
         },
         "deviceScope": {
+          "description": "Scope to which this device instance belongs to",
           "type": "string"
         },
         "parentScopes": {
+          "description": "TODO: new property added - need explanation",
           "type": "array",
           "items": {
             "type": "string"
@@ -2832,10 +2837,12 @@
           "type": "object"
         },
         "responseTimeoutInSeconds": {
+          "description": "Method timeout in seconds",
           "format": "int32",
           "type": "integer"
         },
         "connectTimeoutInSeconds": {
+          "description": "Connection timeout in seconds",
           "format": "int32",
           "type": "integer"
         }
