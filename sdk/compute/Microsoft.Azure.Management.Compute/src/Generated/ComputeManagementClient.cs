@@ -72,6 +72,16 @@ namespace Microsoft.Azure.Management.Compute
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the ISharedVmExtensionsOperations.
+        /// </summary>
+        public virtual ISharedVmExtensionsOperations SharedVmExtensions { get; private set; }
+
+        /// <summary>
+        /// Gets the ISharedVmExtensionVersionsOperations.
+        /// </summary>
+        public virtual ISharedVmExtensionVersionsOperations SharedVmExtensionVersions { get; private set; }
+
+        /// <summary>
         /// Gets the IOperations.
         /// </summary>
         public virtual IOperations Operations { get; private set; }
@@ -462,6 +472,8 @@ namespace Microsoft.Azure.Management.Compute
         /// </summary>
         private void Initialize()
         {
+            SharedVmExtensions = new SharedVmExtensionsOperations(this);
+            SharedVmExtensionVersions = new SharedVmExtensionVersionsOperations(this);
             Operations = new Operations(this);
             AvailabilitySets = new AvailabilitySetsOperations(this);
             ProximityPlacementGroups = new ProximityPlacementGroupsOperations(this);

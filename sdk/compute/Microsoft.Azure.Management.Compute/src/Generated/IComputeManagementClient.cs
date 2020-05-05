@@ -67,6 +67,16 @@ namespace Microsoft.Azure.Management.Compute
 
 
         /// <summary>
+        /// Gets the ISharedVmExtensionsOperations.
+        /// </summary>
+        ISharedVmExtensionsOperations SharedVmExtensions { get; }
+
+        /// <summary>
+        /// Gets the ISharedVmExtensionVersionsOperations.
+        /// </summary>
+        ISharedVmExtensionVersionsOperations SharedVmExtensionVersions { get; }
+
+        /// <summary>
         /// Gets the IOperations.
         /// </summary>
         IOperations Operations { get; }
