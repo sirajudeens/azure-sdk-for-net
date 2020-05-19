@@ -14,28 +14,26 @@ namespace Microsoft.Azure.Management.Compute.Models
     using System.Linq;
 
     /// <summary>
-    /// The gallery artifact version source.
+    /// Specifies the disallowed configuration for a virtual machine image.
     /// </summary>
-    public partial class GalleryArtifactVersionSource
+    public partial class DisallowedConfiguration
     {
         /// <summary>
-        /// Initializes a new instance of the GalleryArtifactVersionSource
-        /// class.
+        /// Initializes a new instance of the DisallowedConfiguration class.
         /// </summary>
-        public GalleryArtifactVersionSource()
+        public DisallowedConfiguration()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the GalleryArtifactVersionSource
-        /// class.
+        /// Initializes a new instance of the DisallowedConfiguration class.
         /// </summary>
-        /// <param name="id">The id of the gallery artifact version source. Can
-        /// specify a disk uri, snapshot uri, or user image.</param>
-        public GalleryArtifactVersionSource(string id = default(string))
+        /// <param name="vmDiskType">VM disk types which are disallowed.
+        /// Possible values include: 'None', 'Unmanaged'</param>
+        public DisallowedConfiguration(string vmDiskType = default(string))
         {
-            Id = id;
+            VmDiskType = vmDiskType;
             CustomInit();
         }
 
@@ -45,11 +43,11 @@ namespace Microsoft.Azure.Management.Compute.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the id of the gallery artifact version source. Can
-        /// specify a disk uri, snapshot uri, or user image.
+        /// Gets or sets VM disk types which are disallowed. Possible values
+        /// include: 'None', 'Unmanaged'
         /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        [JsonProperty(PropertyName = "vmDiskType")]
+        public string VmDiskType { get; set; }
 
     }
 }
